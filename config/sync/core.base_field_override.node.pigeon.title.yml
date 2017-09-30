@@ -1,0 +1,18 @@
+uuid: 1b47ba7f-a2b2-4825-91ae-2ed7361762a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.pigeon
+id: node.pigeon.title
+field_name: title
+entity_type: node
+bundle: pigeon
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

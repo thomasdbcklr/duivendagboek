@@ -1,0 +1,17 @@
+uuid: ca3bc839-e42e-4a33-acfa-14299a331148
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Pigeon
+type: pigeon
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

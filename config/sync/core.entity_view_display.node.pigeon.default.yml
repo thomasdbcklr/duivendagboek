@@ -1,0 +1,17 @@
+uuid: 9c8880f4-c6b5-4b24-a82a-bf1124369d41
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.pigeon
+  module:
+    - user
+id: node.pigeon.default
+targetEntityType: node
+bundle: pigeon
+mode: default
+content:
+  links:
+    weight: 100
+    region: content
+hidden: {  }
