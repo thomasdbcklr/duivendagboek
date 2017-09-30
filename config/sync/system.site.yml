@@ -1,0 +1,14 @@
+uuid: 1c011a8d-7d3d-48e8-b7de-c51ec7dc4e51
+name: duivendagboek
+mail: info@duivendagboek.be
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
