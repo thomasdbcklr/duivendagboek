@@ -1,9 +1,9 @@
 uuid: 1c011a8d-7d3d-48e8-b7de-c51ec7dc4e51
-name: duivendagboek
+name: 'Mijn Duivendagboek'
 mail: info@duivendagboek.be
 slogan: ''
 page:
-  403: ''
+  403: /user/login
   404: ''
   front: /pigeons
 admin_compact_mode: false

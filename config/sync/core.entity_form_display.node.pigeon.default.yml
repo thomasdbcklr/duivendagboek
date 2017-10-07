@@ -16,13 +16,13 @@ bundle: pigeon
 mode: default
 content:
   field_colour:
-    weight: 27
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_father:
-    weight: 28
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -34,19 +34,19 @@ content:
     type: options_buttons
     region: content
   field_mother:
-    weight: 29
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_name_breed:
-    weight: 26
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_notes:
-    weight: 30
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
@@ -61,10 +61,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
 hidden:
   created: true
   langcode: true
   path: true
   promote: true
   sticky: true
-  uid: true

@@ -1,15 +1,15 @@
-uuid: 526103e0-265e-46e2-8e37-251232f4f8e4
+uuid: 54cf0875-c717-4494-83d9-980ba8af4827
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bootstrap
+    - duivenkot
 _core:
   default_config_hash: wDR9JKEATSWldBjw8du8s3G2zjEYeQf88nlld11hMLo
-id: bootstrap_breadcrumbs
-theme: bootstrap
+id: duivenkot_breadcrumbs
+theme: duivenkot
 region: header
 weight: -6
 provider: null

@@ -1,4 +1,4 @@
-uuid: 4bd3f6f2-10b3-44b8-973a-8cf58cf0280c
+uuid: 56646dd5-fbc0-43f5-9559-576c77e682fc
 langcode: en
 status: true
 dependencies:
@@ -7,13 +7,13 @@ dependencies:
   module:
     - system
   theme:
-    - bootstrap
+    - duivenkot
 _core:
   default_config_hash: R2K_qX0ZUMbUL6ie_-S9tZVjvqmlWKlscikgeRv9vhw
-id: bootstrap_account_menu
-theme: bootstrap
+id: duivenkot_account_menu
+theme: duivenkot
 region: navigation_collapsible
-weight: -6
+weight: -4
 provider: null
 plugin: 'system_menu_block:account'
 settings:

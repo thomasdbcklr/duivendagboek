@@ -9,10 +9,13 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
+  - 'access administration pages'
   - 'access comments'
-  - 'access shortcuts'
+  - 'access content'
   - 'access site-wide contact form'
+  - 'create pigeon content'
+  - 'delete own pigeon content'
+  - 'edit own pigeon content'
   - 'post comments'
-  - 'search content'
   - 'skip comment approval'
   - 'view own unpublished content'

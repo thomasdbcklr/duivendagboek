@@ -1,0 +1,22 @@
+uuid: 2fbaab29-b661-4e81-8891-1028fe9ebff9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - duivenkot
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: duivenkot_content
+theme: duivenkot
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

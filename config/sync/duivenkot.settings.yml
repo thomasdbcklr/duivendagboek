@@ -1,0 +1,19 @@
+schemas:
+  bootstrap: 8000
+  duivenkot: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://www.duivendagboek.local/themes/contrib/bootstrap/favicon.ico'
+  use_default: 1
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: 1
+  node_user_picture: 0
+logo:
+  path: ''
+  url: ''
+  use_default: 1
+table_responsive: '-1'
+table: ''

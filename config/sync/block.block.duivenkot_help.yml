@@ -1,15 +1,15 @@
-uuid: a13c4e12-42b8-4253-acce-d0d717f90deb
+uuid: 34b5a37c-e285-4818-8a42-3be7823b02c1
 langcode: en
 status: false
 dependencies:
   module:
     - help
   theme:
-    - bootstrap
+    - duivenkot
 _core:
   default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
-id: bootstrap_help
-theme: bootstrap
+id: duivenkot_help
+theme: duivenkot
 region: help
 weight: -6
 provider: null
