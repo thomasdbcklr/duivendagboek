@@ -1,0 +1,27 @@
+uuid: 4813583c-40ed-4aba-8a09-f103b36d1ec3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_father
+    - node.type.pigeon
+id: node.pigeon.field_father
+field_name: field_father
+entity_type: node
+bundle: pigeon
+label: Father
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pigeon: pigeon
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

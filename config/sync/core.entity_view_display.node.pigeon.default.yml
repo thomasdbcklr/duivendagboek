@@ -3,6 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.pigeon.field_colour
+    - field.field.node.pigeon.field_father
+    - field.field.node.pigeon.field_gender
+    - field.field.node.pigeon.field_mother
+    - field.field.node.pigeon.field_name_breed
+    - field.field.node.pigeon.field_notes
     - node.type.pigeon
   module:
     - user
@@ -11,7 +17,57 @@ targetEntityType: node
 bundle: pigeon
 mode: default
 content:
+  field_colour:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_father:
+    weight: 104
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_gender:
+    weight: 101
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_mother:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_name_breed:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_notes:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  langcode: true

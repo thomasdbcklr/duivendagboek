@@ -1,0 +1,22 @@
+uuid: 5f40b32a-7807-4111-b658-b45b318e924d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pigion
+label: Pigion
+type: 'canonical_entities:node'
+pattern: 'pigions/[node:title]'
+selection_criteria:
+  86fbb2c2-2995-4502-a3ba-123fbaa4232c:
+    id: node_type
+    bundles:
+      pigeon: pigeon
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 86fbb2c2-2995-4502-a3ba-123fbaa4232c
+selection_logic: and
+weight: -5
+relationships: {  }

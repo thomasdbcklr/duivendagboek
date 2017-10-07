@@ -8,7 +8,7 @@ id: node.pigeon.title
 field_name: title
 entity_type: node
 bundle: pigeon
-label: Name
+label: Ringnumber
 description: ''
 required: true
 translatable: true

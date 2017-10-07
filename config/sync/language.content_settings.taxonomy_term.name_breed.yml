@@ -1,0 +1,11 @@
+uuid: 90da523e-3e9f-45e4-b4e7-165b9feb7007
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.name_breed
+id: taxonomy_term.name_breed
+target_entity_type_id: taxonomy_term
+target_bundle: name_breed
+default_langcode: site_default
+language_alterable: false

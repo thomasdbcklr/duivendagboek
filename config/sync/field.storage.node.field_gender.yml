@@ -1,0 +1,18 @@
+uuid: 871c671a-830f-4d11-a29d-8801b0792a13
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_gender
+field_name: field_gender
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

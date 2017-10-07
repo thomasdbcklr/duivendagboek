@@ -1,0 +1,28 @@
+uuid: 8bd4d65a-05f8-4bd7-b53f-edce904504dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colour
+    - node.type.pigeon
+    - taxonomy.vocabulary.colour
+id: node.pigeon.field_colour
+field_name: field_colour
+entity_type: node
+bundle: pigeon
+label: Colour
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      colour: colour
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

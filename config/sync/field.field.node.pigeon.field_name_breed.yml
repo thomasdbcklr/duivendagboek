@@ -1,0 +1,28 @@
+uuid: accbace8-f668-481a-9a98-5ff6d990c645
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_name_breed
+    - node.type.pigeon
+    - taxonomy.vocabulary.name_breed
+id: node.pigeon.field_name_breed
+field_name: field_name_breed
+entity_type: node
+bundle: pigeon
+label: Name/Breed
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      name_breed: name_breed
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
