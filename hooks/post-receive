@@ -1,0 +1,2 @@
+#!/bin/sh
+GIT_WORK_TREE=/home/deb76872n2/domains/mijnduivendagboek.be/public_html git checkout -f
