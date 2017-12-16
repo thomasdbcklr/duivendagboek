@@ -38,11 +38,34 @@ use Symfony\Component\Validator\Util\PropertyPath;
  */
 class RecursiveContextualValidator implements ContextualValidatorInterface
 {
+    /**
+     * @var ExecutionContextInterface
+     */
     private $context;
+
+    /**
+     * @var string
+     */
     private $defaultPropertyPath;
+
+    /**
+     * @var array
+     */
     private $defaultGroups;
+
+    /**
+     * @var MetadataFactoryInterface
+     */
     private $metadataFactory;
+
+    /**
+     * @var ConstraintValidatorFactoryInterface
+     */
     private $validatorFactory;
+
+    /**
+     * @var ObjectInitializerInterface[]
+     */
     private $objectInitializers;
 
     /**
@@ -378,7 +401,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
      * objects are iterated as well. Nested arrays are always iterated,
      * regardless of the value of $recursive.
      *
-     * @param iterable                  $collection    The collection
+     * @param array|\Traversable        $collection    The collection
      * @param string                    $propertyPath  The current property path
      * @param string[]                  $groups        The validated groups
      * @param bool                      $stopRecursion Whether to disable

@@ -26,6 +26,9 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
  */
 class LegacyExecutionContext extends ExecutionContext
 {
+    /**
+     * @var MetadataFactoryInterface
+     */
     private $metadataFactory;
 
     /**

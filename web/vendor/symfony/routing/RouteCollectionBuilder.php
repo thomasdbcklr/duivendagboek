@@ -38,6 +38,9 @@ class RouteCollectionBuilder
     private $methods;
     private $resources = array();
 
+    /**
+     * @param LoaderInterface $loader
+     */
     public function __construct(LoaderInterface $loader = null)
     {
         $this->loader = $loader;
@@ -309,10 +312,10 @@ class RouteCollectionBuilder
 
                 $routeCollection->addCollection($subCollection);
             }
-        }
 
-        foreach ($this->resources as $resource) {
-            $routeCollection->addResource($resource);
+            foreach ($this->resources as $resource) {
+                $routeCollection->addResource($resource);
+            }
         }
 
         return $routeCollection;

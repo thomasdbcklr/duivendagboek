@@ -162,6 +162,11 @@ class PassConfig
         return $this->mergePass;
     }
 
+    /**
+     * Sets the Merge Pass.
+     *
+     * @param CompilerPassInterface $pass The merge pass
+     */
     public function setMergePass(CompilerPassInterface $pass)
     {
         $this->mergePass = $pass;

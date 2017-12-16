@@ -16,7 +16,6 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Symfony\Component\Serializer\Exception\CircularReferenceException;
 use Symfony\Component\Serializer\Exception\LogicException;
-use Symfony\Component\Serializer\Exception\RuntimeException;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactoryInterface;
 use Symfony\Component\Serializer\NameConverter\NameConverterInterface;
 
@@ -29,14 +28,13 @@ class ObjectNormalizer extends AbstractNormalizer
 {
     private $attributesCache = array();
 
+    /**
+     * @var PropertyAccessorInterface
+     */
     protected $propertyAccessor;
 
     public function __construct(ClassMetadataFactoryInterface $classMetadataFactory = null, NameConverterInterface $nameConverter = null, PropertyAccessorInterface $propertyAccessor = null)
     {
-        if (!class_exists('Symfony\Component\PropertyAccess\PropertyAccess')) {
-            throw new RuntimeException('The ObjectNormalizer class requires the "PropertyAccess" component. Install "symfony/property-access" to use it.');
-        }
-
         parent::__construct($classMetadataFactory, $nameConverter);
 
         $this->propertyAccessor = $propertyAccessor ?: PropertyAccess::createPropertyAccessor();
@@ -123,7 +121,7 @@ class ObjectNormalizer extends AbstractNormalizer
                 $attribute = $this->nameConverter->denormalize($attribute);
             }
 
-            $allowed = false === $allowedAttributes || in_array($attribute, $allowedAttributes);
+            $allowed = $allowedAttributes === false || in_array($attribute, $allowedAttributes);
             $ignored = in_array($attribute, $this->ignoredAttributes);
 
             if ($allowed && !$ignored) {
@@ -198,7 +196,7 @@ class ObjectNormalizer extends AbstractNormalizer
         $reflClass = new \ReflectionClass($object);
         foreach ($reflClass->getMethods(\ReflectionMethod::IS_PUBLIC) as $reflMethod) {
             if (
-                0 !== $reflMethod->getNumberOfRequiredParameters() ||
+                $reflMethod->getNumberOfRequiredParameters() !== 0 ||
                 $reflMethod->isStatic() ||
                 $reflMethod->isConstructor() ||
                 $reflMethod->isDestructor()
@@ -210,22 +208,10 @@ class ObjectNormalizer extends AbstractNormalizer
 
             if (0 === strpos($name, 'get') || 0 === strpos($name, 'has')) {
                 // getters and hassers
-                $propertyName = substr($name, 3);
-
-                if (!$reflClass->hasProperty($propertyName)) {
-                    $propertyName = lcfirst($propertyName);
-                }
-
-                $attributes[$propertyName] = true;
-            } elseif (0 === strpos($name, 'is')) {
+                $attributes[lcfirst(substr($name, 3))] = true;
+            } elseif (strpos($name, 'is') === 0) {
                 // issers
-                $propertyName = substr($name, 2);
-
-                if (!$reflClass->hasProperty($propertyName)) {
-                    $propertyName = lcfirst($propertyName);
-                }
-
-                $attributes[$propertyName] = true;
+                $attributes[lcfirst(substr($name, 2))] = true;
             }
         }
 

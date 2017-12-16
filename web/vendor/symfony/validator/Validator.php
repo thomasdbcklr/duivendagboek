@@ -28,10 +28,29 @@ use Symfony\Component\Validator\Exception\ValidatorException;
  */
 class Validator implements ValidatorInterface, Mapping\Factory\MetadataFactoryInterface
 {
+    /**
+     * @var MetadataFactoryInterface
+     */
     private $metadataFactory;
+
+    /**
+     * @var ConstraintValidatorFactoryInterface
+     */
     private $validatorFactory;
+
+    /**
+     * @var TranslatorInterface
+     */
     private $translator;
+
+    /**
+     * @var null|string
+     */
     private $translationDomain;
+
+    /**
+     * @var array
+     */
     private $objectInitializers;
 
     public function __construct(
@@ -89,7 +108,7 @@ class Validator implements ValidatorInterface, Mapping\Factory\MetadataFactoryIn
     /**
      * {@inheritdoc}
      *
-     * @throws ValidatorException if the metadata for the value does not support properties
+     * @throws ValidatorException If the metadata for the value does not support properties.
      */
     public function validateProperty($containingValue, $property, $groups = null)
     {
@@ -120,7 +139,7 @@ class Validator implements ValidatorInterface, Mapping\Factory\MetadataFactoryIn
     /**
      * {@inheritdoc}
      *
-     * @throws ValidatorException if the metadata for the value does not support properties
+     * @throws ValidatorException If the metadata for the value does not support properties.
      */
     public function validatePropertyValue($containingValue, $property, $value, $groups = null)
     {
@@ -132,7 +151,7 @@ class Validator implements ValidatorInterface, Mapping\Factory\MetadataFactoryIn
                 ? '"'.$containingValue.'"'
                 : 'the value of type '.gettype($containingValue);
 
-            throw new ValidatorException(sprintf('The metadata for %s does not support properties.', $valueAsString));
+            throw new ValidatorException(sprintf('The metadata for '.$valueAsString.' does not support properties.'));
         }
 
         // If $containingValue is passed as class name, take $value as root

@@ -153,6 +153,8 @@ class ExceptionHandler
      * If you have the Symfony HttpFoundation component installed,
      * this method will use it to create and send the response. If not,
      * it will fallback to plain PHP functions.
+     *
+     * @param \Exception $exception An \Exception instance
      */
     private function failSafeHandle(\Exception $exception)
     {
@@ -236,6 +238,8 @@ class ExceptionHandler
     /**
      * Gets the HTML content associated with the given exception.
      *
+     * @param FlattenException $exception A FlattenException instance
+     *
      * @return string The content as a string
      */
     public function getContent(FlattenException $exception)
@@ -301,6 +305,8 @@ EOF;
 
     /**
      * Gets the stylesheet associated with the given exception.
+     *
+     * @param FlattenException $exception A FlattenException instance
      *
      * @return string The stylesheet as a string
      */
@@ -436,7 +442,7 @@ EOF;
                 $formattedValue = str_replace("\n", '', var_export($this->escapeHtml((string) $item[1]), true));
             }
 
-            $result[] = is_int($key) ? $formattedValue : sprintf("'%s' => %s", $this->escapeHtml($key), $formattedValue);
+            $result[] = is_int($key) ? $formattedValue : sprintf("'%s' => %s", $key, $formattedValue);
         }
 
         return implode(', ', $result);
@@ -451,7 +457,7 @@ EOF;
     {
         @trigger_error('The '.__METHOD__.' method is deprecated since version 2.7 and will be removed in 3.0.', E_USER_DEPRECATED);
 
-        return htmlspecialchars($str, ENT_QUOTES | (\PHP_VERSION_ID >= 50400 ? ENT_SUBSTITUTE : 0), 'UTF-8');
+        return htmlspecialchars($str, ENT_QUOTES | (PHP_VERSION_ID >= 50400 ? ENT_SUBSTITUTE : 0), 'UTF-8');
     }
 
     /**
@@ -459,7 +465,7 @@ EOF;
      */
     private function escapeHtml($str)
     {
-        return htmlspecialchars($str, ENT_QUOTES | (\PHP_VERSION_ID >= 50400 ? ENT_SUBSTITUTE : 0), $this->charset);
+        return htmlspecialchars($str, ENT_QUOTES | (PHP_VERSION_ID >= 50400 ? ENT_SUBSTITUTE : 0), $this->charset);
     }
 
     /**

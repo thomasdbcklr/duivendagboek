@@ -55,6 +55,8 @@ abstract class Bundle implements BundleInterface
      *
      * This method can be overridden to register compilation passes,
      * other extensions, ...
+     *
+     * @param ContainerBuilder $container A ContainerBuilder instance
      */
     public function build(ContainerBuilder $container)
     {
@@ -139,7 +141,7 @@ abstract class Bundle implements BundleInterface
     /**
      * Returns the bundle parent name.
      *
-     * @return string|null The Bundle parent name it overrides or null if no parent
+     * @return string The Bundle parent name it overrides or null if no parent
      */
     public function getParent()
     {
@@ -169,6 +171,8 @@ abstract class Bundle implements BundleInterface
      *
      * * Commands are in the 'Command' sub-directory
      * * Commands extend Symfony\Component\Console\Command\Command
+     *
+     * @param Application $application An Application instance
      */
     public function registerCommands(Application $application)
     {

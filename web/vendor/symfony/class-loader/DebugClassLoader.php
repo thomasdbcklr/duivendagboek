@@ -31,6 +31,8 @@ class DebugClassLoader
     private $classFinder;
 
     /**
+     * Constructor.
+     *
      * @param object $classFinder
      */
     public function __construct($classFinder)
